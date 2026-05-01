@@ -4,26 +4,24 @@ class LehmanCourse:
     def __init__(self, course_name, credits):
         self.course_name = course_name
         self.credits = credits
-        self._student_count = 0  # protected variable
+        self._student_count = 0  
 
     def enroll_student(self):
         self._student_count += 1
 
     def display_info(self):
         print(f"Course: {self.course_name}, Credits: {self.credits}, Enrolled Students: {self._student_count}")
-# Exercise 2: Specialized Inheritance
 
 class LabCourse(LehmanCourse):
     def __init__(self, course_name, credits, lab_fee):
-        super().__init__(course_name, credits)  # call parent constructor
+        super().__init__(course_name, credits)  
         self.lab_fee = lab_fee
 
     def display_info(self):
-        # override method and include lab fee
+        
         print(f"Course: {self.course_name}, Credits: {self.credits}, "
               f"Lab Fee: ${self.lab_fee}, Enrolled Students: {self._student_count}")
 
-# Exercise 3: Duck Typing Demonstration
 
 class Professor:
     def get_role(self):
@@ -36,7 +34,7 @@ class Student:
 
 
 def print_role(person):
-    print(person.get_role())  # works for any object with get_role()
+    print(person.get_role()) 
 
 
 # Exercise 1 Test
